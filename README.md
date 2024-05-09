@@ -1,7 +1,5 @@
 # Robot Framework Docker Action
 
-This action runs Robot Framework tests using [ppodgorsek](https://github.com/ppodgorsek/docker-robot-framework) image.
-
 ## Example usage
 
 Run with chrome:
@@ -12,9 +10,9 @@ Run with chrome:
     name: Run Robot Framework Tests
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Robot Framework
-        uses: joonvena/robotframework-docker-action@v1.0
+        uses: brnorg/robot-framework@v1.0
 ```
 
 Run with firefox and in parallel:
@@ -25,7 +23,7 @@ Run with firefox and in parallel:
     name: Run Robot Framework Tests
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Robot Framework
         uses: joonvena/robotframework-docker-action@v1.0
         with:
@@ -48,3 +46,5 @@ Available configurations in with block:
 | robot_tests_dir          | 'robot_tests'                       | Location of tests inside repository                  |
 | robot_reports_dir        | 'reports'                           | Location of report output from test execution        |
 | robot_runner_image       | 'ppodgorsek/robot-framework:latest' | Docker image which will be used to execute the tests |
+| robot_runner_image       | 'ppodgorsek/robot-framework:latest' | Docker image which will be used to execute the tests |
+| robot_requirements       | ''                                  | File with requirements.txt                           |
